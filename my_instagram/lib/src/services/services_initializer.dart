@@ -11,7 +11,6 @@ final servicesInitializerProvider = Provider<ServicesInitializer>((ref) {
 class ServicesInitializer {
   ServicesInitializer(this.ref);
   final Ref ref;
-
   Future<void> init() async {
     await _initKeyValueStorage();
     await _initFirebase();

@@ -44,6 +44,12 @@ dependencies:
   another_flushbar: ^1.12.29
   image_picker: ^0.8.7+4
   firebase_core: ^2.13.0
+  firebase_auth: ^4.6.1
+  flutter_facebook_auth: ^5.0.11
+  google_sign_in: ^6.1.0
+  cloud_firestore: ^4.7.1
+  font_awesome_flutter: ^10.4.0
+  url_launcher: ^6.1.11
 
 dev_dependencies:
   flutter_test:
