@@ -8,6 +8,8 @@ import 'src/services/services_initializer.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  //hello test app
+  
   final ProviderContainer container = ProviderContainer();
   await container.read(servicesInitializerProvider).init();
   runZonedGuarded<Future<void>>(() async {
