@@ -27,3 +27,7 @@ extension RmeoveAll on String {
 extension Log on Object {
   void log() => devtools.log(toString());
 }
+
+extension DismissKeyboard on Widget {
+  void dismissKeyboard() => FocusManager.instance.primaryFocus?.unfocus();
+}

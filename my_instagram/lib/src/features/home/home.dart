@@ -4,13 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:my_instagram/src/features/AuthScreen/presentation/login_page.dart';
+import 'package:my_instagram/src/features/home/post/providers/%20can_current_user_delete_post_provider.dart';
+import 'package:my_instagram/src/features/home/presentaion/user_posts_view.dart';
+import 'package:my_instagram/src/features/home/presentaion/widgets/create_new_post_view.dart';
 import 'package:my_instagram/src/ui_utils/alert_dialog_model.dart';
 
 import '../../providers/app_providers.dart';
 import '../../ui_utils/app_snack_bar.dart';
+import '../../ui_utils/image_picker_helper.dart';
 import '../../ui_utils/loading_screen.dart';
 import '../../utils/src/constants.dart';
+import '../../utils/src/extensions/file_type.dart';
 import '../AuthScreen/Provider/auth_provider.dart';
+import '../searchScreen/presentaion/search_view.dart';
+import 'home_view.dart';
 import 'presentaion/widgets/logout_dialog.dart';
 
 class HomeScreen extends StatefulHookConsumerWidget {
@@ -34,6 +41,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
+          // leading: SizedBox(),
           title: const Text(
             Strings.appName,
           ),
@@ -43,50 +52,50 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 FontAwesomeIcons.film,
               ),
               onPressed: () async {
-                // final videoFile =
-                //     await ImagePickerHelper.pickVideoFromGallery();
-                // if (videoFile == null) {
-                //   return;
-                // }
+                final videoFile =
+                    await ImagePickerHelper.pickVideoFromGallery();
+                if (videoFile == null) {
+                  return;
+                }
 
-                // ref.refresh(postSettingProvider);
-                // // go to the screen to create a new post
-                // if (!mounted) {
-                //   return;
-                // }
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (_) => CreateNewPostView(
-                //       fileType: FileType.video,
-                //       fileToPost: videoFile,
-                //     ),
-                //   ),
-                // );
+                ref.refresh(postSettingProvider);
+                // go to the screen to create a new post
+                if (!mounted) {
+                  return;
+                }
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => CreateNewPostView(
+                      fileType: FileType.video,
+                      fileToPost: videoFile,
+                    ),
+                  ),
+                );
               },
             ),
             IconButton(
               onPressed: () async {
-                // final videoFile =
-                //     await ImagePickerHelper.pickImageFromGallery();
-                // if (videoFile == null) {
-                //   return;
-                // }
+                final videoFile =
+                    await ImagePickerHelper.pickImageFromGallery();
+                if (videoFile == null) {
+                  return;
+                }
 
-                // ref.refresh(postSettingProvider);
-                // // go to the screen to create a new post
-                // if (!mounted) {
-                //   return;
-                // }
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (_) => CreateNewPostView(
-                //       fileType: FileType.image,
-                //       fileToPost: videoFile,
-                //     ),
-                //   ),
-                // );
+                ref.refresh(postSettingProvider);
+                // go to the screen to create a new post
+                if (!mounted) {
+                  return;
+                }
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => CreateNewPostView(
+                      fileType: FileType.image,
+                      fileToPost: videoFile,
+                    ),
+                  ),
+                );
               },
               icon: const Icon(
                 Icons.add_photo_alternate_outlined,
@@ -148,12 +157,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ),
         body: const TabBarView(
           children: [
-            Text("data"),
-            Text("data2"),
-            Text("data3")
-            // UserPostsView(),
-            // SearchView(),
-            // HomeView(),
+            HomeView(),
+            SearchView(),
+            UserPostsView(),
           ],
         ),
       ),

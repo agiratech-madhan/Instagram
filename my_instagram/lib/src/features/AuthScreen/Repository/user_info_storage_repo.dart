@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart' show immutable;
-
-import '../../../utils/src/constants.dart';
 import '../../../utils/src/firebase_collection_name.dart';
 import '../../../utils/src/firebase_field_name.dart';
 import '../../../utils/utils.dart';
