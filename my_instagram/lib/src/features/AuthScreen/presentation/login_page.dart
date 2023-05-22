@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:my_instagram/src/features/home/home.dart';
+import 'package:my_instagram/src/routing/route_constants.dart';
 import 'package:my_instagram/src/ui_utils/app_snack_bar.dart';
 import 'package:my_instagram/src/ui_utils/loading_screen.dart';
 
@@ -56,7 +57,9 @@ class LoginScreen extends HookConsumerWidget {
               ),
               TextButton(
                 onPressed: () async {
-                  //  final success=  await ref.read(authStateProvider.notifier).loginwithFacebook();
+                  await ref
+                      .read(authStateProvider.notifier)
+                      .loginwithFacebook();
                 },
                 style: TextButton.styleFrom(
                   backgroundColor: AppColors.loginButtonColor,
@@ -75,8 +78,7 @@ class LoginScreen extends HookConsumerWidget {
                   if (success == AuthResult.success) {
                     LoadingScreen.instance().hide();
 
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                    Navigator.pushNamed(context, RouteConstants.homeScreen);
                   } else {
                     AppSnackBar(message: "Failed To Login")
                         .showAppSnackBar(context);

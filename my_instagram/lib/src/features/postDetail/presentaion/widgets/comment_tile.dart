@@ -6,9 +6,9 @@ import 'package:my_instagram/src/ui_utils/alert_dialog_model.dart';
 import '../../../../ui_utils/animations/small_error_animation_view.dart';
 import '../../../../utils/src/constants.dart';
 import '../../../AuthScreen/Provider/auth_provider.dart';
-import '../../image_upload/provider/delete_comment_notifier_provider.dart';
-import '../../post/models/comment_response_model.dart';
-import 'delete_dialog.dart';
+import '../../../home/image_upload/provider/delete_comment_notifier_provider.dart';
+import '../../../home/post/models/comment_response_model.dart';
+import '../../../home/presentaion/widgets/delete_dialog.dart';
 
 class CommentTile extends ConsumerWidget {
   final Comment comment;

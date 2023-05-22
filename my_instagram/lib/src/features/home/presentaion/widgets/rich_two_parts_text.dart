@@ -26,7 +26,7 @@ class RichTwoPartsText extends StatelessWidget {
             ),
           ),
           TextSpan(
-            text: ' $rightPart',
+            text: rightPart,
           ),
         ],
       ),

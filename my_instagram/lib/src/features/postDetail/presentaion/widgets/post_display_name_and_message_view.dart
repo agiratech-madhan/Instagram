@@ -4,7 +4,7 @@ import 'package:my_instagram/src/features/home/presentaion/widgets/rich_two_part
 
 import '../../../../ui_utils/animations/small_error_animation_view.dart';
 import '../../../AuthScreen/Provider/user_info_provider.dart';
-import '../../post/models/post_response_model.dart';
+import '../../../home/post/models/post_response_model.dart';
 
 class PostDisplayNameAndMessageView extends ConsumerWidget {
   final Post post;

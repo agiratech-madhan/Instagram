@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:my_instagram/src/features/AuthScreen/presentation/login_page.dart';
-import 'package:my_instagram/src/features/home/post/providers/%20can_current_user_delete_post_provider.dart';
-import 'package:my_instagram/src/features/home/presentaion/user_posts_view.dart';
-import 'package:my_instagram/src/features/home/presentaion/widgets/create_new_post_view.dart';
+import 'package:my_instagram/src/features/postDetail/providers/%20can_current_user_delete_post_provider.dart';
+import 'package:my_instagram/src/features/myposts/presentation/user_posts_view.dart';
+import 'package:my_instagram/src/features/home/create_new_post_view.dart';
+import 'package:my_instagram/src/routing/route_constants.dart';
 import 'package:my_instagram/src/ui_utils/alert_dialog_model.dart';
 
 import '../../providers/app_providers.dart';
@@ -41,6 +42,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
+          // backgroundColor: Colors.black,
           automaticallyImplyLeading: false,
           // leading: SizedBox(),
           title: const Text(
@@ -63,15 +65,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 if (!mounted) {
                   return;
                 }
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => CreateNewPostView(
-                      fileType: FileType.video,
-                      fileToPost: videoFile,
-                    ),
-                  ),
-                );
+                Navigator.pushNamed(context, RouteConstants.createPost,
+                    arguments: {
+                      "fileType": FileType.video,
+                      "fileToPost": videoFile,
+                    });
               },
             ),
             IconButton(
@@ -87,15 +85,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 if (!mounted) {
                   return;
                 }
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => CreateNewPostView(
-                      fileType: FileType.image,
-                      fileToPost: videoFile,
-                    ),
-                  ),
-                );
+                Navigator.pushNamed(context, RouteConstants.createPost,
+                    arguments: {
+                      "fileType": FileType.image,
+                      "fileToPost": videoFile,
+                    });
               },
               icon: const Icon(
                 Icons.add_photo_alternate_outlined,
@@ -119,8 +113,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         .showAppSnackBar(context);
                   });
 
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                  Navigator.pushNamed(context, RouteConstants.loginScreen);
                   // } else {
                   // AppSnackBar(message: "Logout Failed")
                   //     .showAppSnackBar(context);

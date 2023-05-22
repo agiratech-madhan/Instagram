@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../utils/src/firebase_collection_name.dart';
-import '../../../../utils/src/firebase_field_name.dart';
-import '../../../AuthScreen/Provider/auth_provider.dart';
-import '../models/post_response_model.dart';
-import '../post_constants.dart';
+import '../../../utils/src/firebase_collection_name.dart';
+import '../../../utils/src/firebase_field_name.dart';
+import '../../AuthScreen/Provider/auth_provider.dart';
+import '../../home/post/models/post_response_model.dart';
+import '../../home/post/post_constants.dart';
 
 final userPostsProvider = StreamProvider.autoDispose<Iterable<Post>>(
   (ref) {

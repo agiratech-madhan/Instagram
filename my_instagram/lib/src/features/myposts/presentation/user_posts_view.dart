@@ -6,7 +6,7 @@ import '../../../ui_utils/animations/empty_content_with_text_animation_view.dart
 import '../../../ui_utils/animations/error_animation_view.dart';
 import '../../../ui_utils/animations/loading_animation_view.dart';
 import '../../../utils/src/constants.dart';
-import '../post/providers/user_posts_provider.dart';
+import '../provider/user_posts_provider.dart';
 
 class UserPostsView extends ConsumerWidget {
   const UserPostsView({Key? key}) : super(key: key);

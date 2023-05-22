@@ -33,17 +33,9 @@ class _AppState extends State<App> {
         }
         return supportedLocales.first;
       },
-      theme: ThemeData(
-        pageTransitionsTheme: const PageTransitionsTheme(
-          builders: {
-            TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-            TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-          },
-        ),
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        hoverColor: Colors.transparent,
-      ),
+      darkTheme: ThemeData.dark(useMaterial3: true),
+      theme: ThemeData.light(useMaterial3: true),
+      themeMode: ThemeMode.system,
       builder: (_, child) {
         return GestureDetector(
           onTap: () {

@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../utils/src/constants.dart';
-import '../../../../utils/src/extensions/file_type.dart';
-import '../../../AuthScreen/Provider/auth_provider.dart';
-import '../../image_upload/models/thumbnail_request.dart';
-import '../../image_upload/provider/image_uploader_provider.dart';
-import '../../post/post_utils.dart';
-import '../../post/providers/ can_current_user_delete_post_provider.dart';
-import 'file_thumbnail_view.dart';
+import '../../utils/src/constants.dart';
+import '../../utils/src/extensions/file_type.dart';
+import '../AuthScreen/Provider/auth_provider.dart';
+import 'image_upload/models/thumbnail_request.dart';
+import 'image_upload/provider/image_uploader_provider.dart';
+import 'post/post_utils.dart';
+import '../postDetail/providers/ can_current_user_delete_post_provider.dart';
+import 'presentaion/widgets/file_thumbnail_view.dart';
 
 class CreateNewPostView extends StatefulHookConsumerWidget {
   final File fileToPost;

@@ -5,9 +5,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../../ui_utils/animations/small_error_animation_view.dart';
 import '../../../../utils/utils.dart';
 import '../../../AuthScreen/Provider/auth_provider.dart';
-import '../../image_upload/models/likes_dislikes_request.dart';
-import '../../image_upload/provider/has_liked_post_provider.dart';
-import '../../image_upload/provider/like_dislike_post_provider.dart';
+import '../../../home/image_upload/models/likes_dislikes_request.dart';
+import '../../../home/image_upload/provider/has_liked_post_provider.dart';
+import '../../../home/image_upload/provider/like_dislike_post_provider.dart';
 
 class LikeButton extends ConsumerWidget {
   const LikeButton({

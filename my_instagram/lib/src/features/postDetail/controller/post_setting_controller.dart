@@ -2,7 +2,7 @@ import 'dart:collection';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../post_utils.dart';
+import '../../home/post/post_utils.dart';
 
 class PostSettingNotifier extends StateNotifier<Map<PostSetting, bool>> {
   PostSettingNotifier()

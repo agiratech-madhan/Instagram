@@ -4,9 +4,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:my_instagram/src/utils/src/extensions/image_extension/get_collection_name_from%20_filetype.dart';
 import 'package:my_instagram/src/utils/src/firebase_field_name.dart';
 
-import '../../../../utils/src/firebase_collection_name.dart';
-import '../../../../utils/utils.dart';
-import '../models/post_response_model.dart';
+import '../../../utils/src/firebase_collection_name.dart';
+import '../../../utils/utils.dart';
+import '../../home/post/models/post_response_model.dart';
 
 class DeletePostStateNotifier extends StateNotifier<LoadingState> {
   DeletePostStateNotifier() : super(false);

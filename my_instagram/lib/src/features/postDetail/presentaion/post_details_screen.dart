@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:my_instagram/src/features/home/post/providers/all_post_provider.dart';
-import 'package:my_instagram/src/features/home/presentaion/widgets/compact_comment_column.dart';
 import 'package:my_instagram/src/features/home/presentaion/widgets/delete_dialog.dart';
-import 'package:my_instagram/src/features/home/presentaion/widgets/like_button.dart';
-import 'package:my_instagram/src/features/home/presentaion/widgets/likes_count_view.dart';
-import 'package:my_instagram/src/features/home/presentaion/widgets/post_comments_view.dart';
-import 'package:my_instagram/src/features/home/presentaion/widgets/post_display_name_and_message_view.dart';
+import 'package:my_instagram/src/features/postDetail/presentaion/widgets/compact_comment_column.dart';
+import 'package:my_instagram/src/features/postDetail/presentaion/widgets/like_button.dart';
+import 'package:my_instagram/src/features/postDetail/presentaion/widgets/likes_count_view.dart';
+import 'package:my_instagram/src/features/postDetail/presentaion/widgets/post_comments_view.dart';
 import 'package:my_instagram/src/features/home/presentaion/widgets/post_image_or_videro_view.dart';
+import 'package:my_instagram/src/features/postDetail/presentaion/widgets/post_display_name_and_message_view.dart';
+import 'package:my_instagram/src/routing/route_constants.dart';
 import 'package:my_instagram/src/ui_utils/alert_dialog_model.dart';
 import 'package:share_plus/share_plus.dart';
-// import 'package:share_plus/share_plus.dart';
-
 import '../../../ui_utils/animations/error_animation_view.dart';
 import '../../../ui_utils/animations/loading_animation_view.dart';
 import '../../../ui_utils/animations/small_error_animation_view.dart';
 import '../../../utils/src/constants.dart';
 import '../../../utils/src/extensions/file_type.dart';
+
 import '../../home/post/models/post_response_model.dart';
 import '../../home/post/models/post_and_coment_request_model.dart';
-import '../../home/post/providers/ can_current_user_delete_post_provider.dart';
-import '../../home/post/providers/delete_post_provider.dart';
-import '../../home/post/providers/specific_post_with_comment_provider.dart';
+import '../providers/ can_current_user_delete_post_provider.dart';
+
 import '../../home/presentaion/widgets/post_date_view.dart';
+import '../providers/delete_post_provider.dart';
+import '../providers/specific_post_with_comment_provider.dart';
 
 class PostDetailsView extends ConsumerStatefulWidget {
   final Post post;
@@ -130,13 +130,9 @@ class _PostDetailsViewState extends ConsumerState<PostDetailsView> {
                           Icons.mode_comment_outlined,
                         ),
                         onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => PostCommentsView(
-                                postId: postId,
-                              ),
-                            ),
-                          );
+                          Navigator.of(context).pushNamed(
+                              RouteConstants.postComment,
+                              arguments: {"postId": postId});
                         },
                       ),
                   ],

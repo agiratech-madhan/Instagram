@@ -4,8 +4,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../ui_utils/animations/small_error_animation_view.dart';
 import '../../../AuthScreen/Provider/user_info_provider.dart';
-import '../../post/models/comment_response_model.dart';
-import 'rich_two_parts_text.dart';
+import '../../../home/post/models/comment_response_model.dart';
+import '../../../home/presentaion/widgets/rich_two_parts_text.dart';
 
 class CompactCommentTile extends ConsumerWidget {
   const CompactCommentTile({required this.comment, Key? key}) : super(key: key);

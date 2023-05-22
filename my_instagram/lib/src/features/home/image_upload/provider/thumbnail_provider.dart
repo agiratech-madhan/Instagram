@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:my_instagram/src/features/home/image_upload/extension/get_image_with_aspect_ratio.dart';
+import 'package:my_instagram/src/utils/src/extensions/get_image_with_aspect_ratio.dart';
 import 'package:video_thumbnail/video_thumbnail.dart';
 
 import '../../../../utils/src/extensions/file_type.dart';
 import '../exception/thumbnail_exception.dart';
-import '../models/file_type.dart';
 import '../models/image_with_aspect_ratio.dart';
 import '../models/thumbnail_request.dart';
 

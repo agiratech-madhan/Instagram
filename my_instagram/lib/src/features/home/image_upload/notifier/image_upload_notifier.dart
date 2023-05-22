@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:my_instagram/src/features/home/image_upload/extension/get_image_data_aspect_ratio.dart';
+import 'package:my_instagram/src/utils/src/extensions/get_image_data_aspect_ratio.dart';
 import 'package:my_instagram/src/utils/src/extensions/image_extension/get_collection_name_from%20_filetype.dart';
 import 'package:uuid/uuid.dart';
 import 'package:video_thumbnail/video_thumbnail.dart';

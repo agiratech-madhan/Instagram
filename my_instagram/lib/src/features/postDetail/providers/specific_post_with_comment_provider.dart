@@ -4,12 +4,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:my_instagram/src/utils/src/extensions/soting_comments.dart';
 
-import '../../../../utils/src/firebase_collection_name.dart';
-import '../../../../utils/src/firebase_field_name.dart';
-import '../models/comment_response_model.dart';
-import '../models/post_response_model.dart';
-import '../models/post_and_coment_request_model.dart';
-import '../../../postDetail/domainModel/post_with_comments.dart';
+import '../../../utils/src/firebase_collection_name.dart';
+import '../../../utils/src/firebase_field_name.dart';
+import '../../home/post/models/comment_response_model.dart';
+import '../../home/post/models/post_and_coment_request_model.dart';
+import '../../home/post/models/post_response_model.dart';
+import '../domainModel/post_with_comments.dart';
 
 final specificPostWithCommentsProvider = StreamProvider.family
     .autoDispose<PostWithComments, RequestForPostAndComments>((

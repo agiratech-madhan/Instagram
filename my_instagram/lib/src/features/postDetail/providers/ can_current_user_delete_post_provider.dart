@@ -2,10 +2,10 @@
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../AuthScreen/Provider/auth_provider.dart';
+import '../../AuthScreen/Provider/auth_provider.dart';
 import '../controller/post_setting_controller.dart';
-import '../models/post_response_model.dart';
-import '../post_utils.dart';
+import '../../home/post/models/post_response_model.dart';
+import '../../home/post/post_utils.dart';
 
 // /To Check the whether the post have delete option
 final canCurrentUserDeletePostProvider =

@@ -73,12 +73,10 @@ class Authenticator {
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
-
     try {
       final UserCredential uc =
           await FirebaseAuth.instance.signInWithCredential(oauthCredential);
       print(uc.user?.displayName);
-
       return AuthResult.success;
     } catch (e) {
       return AuthResult.failure;

@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:my_instagram/src/features/home/presentaion/widgets/comment_tile.dart';
 import 'package:my_instagram/src/utils/src/extensions/color_extension.dart';
 
 import '../../../../ui_utils/animations/empty_content_with_text_animation_view.dart';
@@ -12,9 +11,10 @@ import '../../../../ui_utils/animations/loading_animation_view.dart';
 import '../../../../utils/src/constants.dart';
 import '../../../../utils/utils.dart';
 import '../../../AuthScreen/Provider/auth_provider.dart';
-import '../../image_upload/provider/post_comments_provider.dart';
-import '../../image_upload/provider/send_comment_provider.dart';
-import '../../post/models/post_and_coment_request_model.dart';
+import 'comment_tile.dart';
+import '../../../home/image_upload/provider/post_comments_provider.dart';
+import '../../../home/image_upload/provider/send_comment_provider.dart';
+import '../../../home/post/models/post_and_coment_request_model.dart';
 
 class PostCommentsView extends HookConsumerWidget {
   final PostId postId;

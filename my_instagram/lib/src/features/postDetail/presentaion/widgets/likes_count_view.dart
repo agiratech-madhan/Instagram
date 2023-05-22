@@ -6,7 +6,7 @@ import '../../../../ui_utils/animations/loading_animation_view.dart';
 import '../../../../ui_utils/animations/small_error_animation_view.dart';
 import '../../../../utils/src/constants.dart';
 import '../../../../utils/utils.dart';
-import '../../image_upload/provider/post_likes_count_provider.dart';
+import '../../../home/image_upload/provider/post_likes_count_provider.dart';
 
 class LikesCountView extends HookConsumerWidget {
   final PostId postId;
