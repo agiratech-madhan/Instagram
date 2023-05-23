@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart' show immutable;
 import '../../../utils/src/firebase_collection_name.dart';
 import '../../../utils/src/firebase_field_name.dart';
 import '../../../utils/utils.dart';
-import '../domain/user_info_payload_model.dart';
+import '../domainModel/user_info_payload_model.dart';
 
 @immutable
 class UserInfoStorage {

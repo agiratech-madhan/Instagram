@@ -4,7 +4,7 @@ import '../../../utils/utils.dart';
 import '../Repository/auth_repo.dart';
 import '../Repository/user_info_storage_repo.dart';
 import '../Utils/auth_enums.dart';
-import '../domain/auth_state_model.dart';
+import '../domainModel/auth_state_model.dart';
 
 class AuthStateNotifier extends StateNotifier<AuthState> {
   final _authenticator = const Authenticator();

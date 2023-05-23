@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:my_instagram/src/features/home/home.dart';
 import 'package:my_instagram/src/routing/route_constants.dart';
 import 'package:my_instagram/src/ui_utils/app_snack_bar.dart';
 import 'package:my_instagram/src/ui_utils/loading_screen.dart';
-
-import '../../../providers/app_providers.dart';
 import '../../../ui_utils/divider_margins.dart';
 import '../../../utils/src/constants.dart';
 import '../../../utils/utils.dart';
@@ -19,14 +16,6 @@ class LoginScreen extends HookConsumerWidget {
   const LoginScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen(isLoadingProvider, (_, isLoading) {
-      if (isLoading) {
-        // const CircularProgressIndicator();
-        // LoadingScreen.instance().show(context: context);
-      } else {
-        // return LoadingScreen.instance().hide();
-      }
-    });
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -44,7 +33,6 @@ class LoginScreen extends HookConsumerWidget {
               ),
               Text(Strings.welcomeToAppName,
                   style: Theme.of(context).textTheme.displaySmall),
-              // const DividerWithMargin(),
               Text(
                 Strings.logIntoYourAccount,
                 style: Theme.of(context)
@@ -77,11 +65,14 @@ class LoginScreen extends HookConsumerWidget {
                       .loginWithGoogle();
                   if (success == AuthResult.success) {
                     LoadingScreen.instance().hide();
-
-                    Navigator.pushNamed(context, RouteConstants.homeScreen);
+                    if (context.mounted) {
+                      Navigator.pushNamed(context, RouteConstants.homeScreen);
+                    }
                   } else {
-                    AppSnackBar(message: "Failed To Login")
-                        .showAppSnackBar(context);
+                    if (context.mounted) {
+                      const AppSnackBar(message: "Failed To Login")
+                          .showAppSnackBar(context);
+                    }
                   }
                 },
                 style: TextButton.styleFrom(

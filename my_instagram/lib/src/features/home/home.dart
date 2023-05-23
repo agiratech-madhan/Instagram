@@ -3,14 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:my_instagram/src/features/AuthScreen/presentation/login_page.dart';
-import 'package:my_instagram/src/features/postDetail/providers/%20can_current_user_delete_post_provider.dart';
 import 'package:my_instagram/src/features/myposts/presentation/user_posts_view.dart';
-import 'package:my_instagram/src/features/home/create_new_post_view.dart';
+import 'package:my_instagram/src/features/postDetail/providers/%20can_current_user_delete_post_provider.dart';
 import 'package:my_instagram/src/routing/route_constants.dart';
 import 'package:my_instagram/src/ui_utils/alert_dialog_model.dart';
 
-import '../../providers/app_providers.dart';
 import '../../ui_utils/app_snack_bar.dart';
 import '../../ui_utils/image_picker_helper.dart';
 import '../../ui_utils/loading_screen.dart';

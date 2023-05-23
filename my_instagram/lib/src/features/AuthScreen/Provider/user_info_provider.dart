@@ -6,7 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../utils/src/firebase_collection_name.dart';
 import '../../../utils/src/firebase_field_name.dart';
 import '../../../utils/utils.dart';
-import '../domain/user_info_model.dart';
+import '../domainModel/user_info_model.dart';
 
 final userInfoModelProvider =
     StreamProvider.family.autoDispose<UserInfoModel, UserId>(

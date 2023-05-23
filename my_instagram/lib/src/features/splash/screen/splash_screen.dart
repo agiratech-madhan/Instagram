@@ -1,7 +1,6 @@
 // import '../../src/ui_utils/app_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:my_instagram/src/features/AuthScreen/presentation/login_page.dart';
 import '../../../providers/app_providers.dart';
 import '../../../routing/route_constants.dart';
 import '../../../services/connectivity_service_provider.dart/connectivity_service_provider.dart';
@@ -10,7 +9,6 @@ import '../../../ui_utils/loading_screen.dart';
 import '../../../utils/utils.dart';
 import '../../../constants/string_constants.dart';
 import '../../AuthScreen/Provider/auth_provider.dart';
-import '../../home/home.dart';
 
 class SplashScreen extends StatefulHookConsumerWidget {
   const SplashScreen({super.key});

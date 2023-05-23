@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_instagram/src/features/home/presentaion/widgets/post_thumbnail_view.dart';
 import 'package:my_instagram/src/routing/route_constants.dart';
-
 import '../../../home/post/models/post_response_model.dart';
-import '../../../postDetail/presentaion/post_details_screen.dart';
 
 class PostsSliverGridView extends StatelessWidget {
   final Iterable<Post> posts;
